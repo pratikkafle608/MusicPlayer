@@ -38,7 +38,7 @@ public class MusicPlayer {
 			case "S" ->clip.stop();
 			case "R"->clip.setMicrosecondPosition(0);
 			case"Q"->clip.close();
-			default ->System.out.println("INvalid response");
+			default ->System.out.println("Invalid response");
 			}
 		}
 		 
