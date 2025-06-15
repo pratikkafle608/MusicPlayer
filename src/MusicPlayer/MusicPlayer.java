@@ -19,8 +19,8 @@ public class MusicPlayer {
 	
 	try(Scanner input=  new Scanner(System.in);AudioInputStream audioStream = AudioSystem.getAudioInputStream(file);) {
 		
-		Clip clip = AudioSystem.getClip();
-		clip.open(audioStream);
+		Clip clip = AudioSystem.getClip();//CREATING AN INSTANCE OF THE CLASS CLIP
+		clip.open(audioStream);//USING THE OBJECT CLIP TO ACCESS THE AUDIO STREAM
 		
 		
 		String response ="";
@@ -34,7 +34,7 @@ public class MusicPlayer {
 			response  = input.nextLine().toUpperCase();
 			
 			switch(response) {
-			case "P" ->clip.start();
+			case "P" ->clip.start();//TO PLAY
 			case "S" ->clip.stop();
 			case "R"->clip.setMicrosecondPosition(0);
 			case"Q"->clip.close();
@@ -46,22 +46,27 @@ public class MusicPlayer {
 		
 		
 	}
-	
+
+	//EXCEPTION HANDLING IF THE AUDIO FILE CANNOT BE IMPORTED INTO THE PROGRAM
 	catch(FileNotFoundException e) {
 		System.out.println("Couldn't import file");
 	}
-	
+
+	//CATCHES EXCEPTION WHEN USER TRIES TO OPEN UNACCEPTED FILES TYPE WITH EXTENSION OTHER THAN .WAV, .AU, .AIFF	
 	catch(UnsupportedAudioFileException e) {
 		System.out.println("Audio file is not supported");
 	}
-	
+
+	//CATCHES EXCEPTIONS WHEN THE APPLICATION FAILS TO ACCESS THE AUDIO RESOUCES, NOT READABLE BY THE PROGRAM 
 	catch(LineUnavailableException e) {
 		System.out.println("Unable to access audio resource");
 	}
-	
+
+	//CATCHES EXCEPTION IF THE USER ENTER INVALID INPUT 
 	catch(IOException e) {
 		System.out.println("Something went wrong");
 	}
+		
 	finally {
 		System.out.println("Bye");
 	}
