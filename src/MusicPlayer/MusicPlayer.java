@@ -38,7 +38,7 @@ public class MusicPlayer {
 			case "S" ->clip.stop();//TO STOP PLAYING NUSIC
 			case "R"->clip.setMicrosecondPosition(0);//RESTART THE MUSIC FROM 0 MS
 			case"Q"->clip.close();//CLOSE THE MUSIC FILE 
-			default ->System.out.println("Invalid response");//IF THE USER ENTERS ANYTHING ELSE BUT P,S,r,q
+			default ->System.out.println("Invalid response");//IF THE USER ENTERS ANYTHING ELSE BUT P,S,R,Q
 			}
 		}
 		 
